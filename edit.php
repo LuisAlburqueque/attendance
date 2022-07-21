@@ -52,7 +52,9 @@
         <input type="text" class="form-control" value ="<?php echo $asistentes['numero'] ?>" id="numero" name="numero" aria-describedby="ceHelp">
         <small id="celHelp" class="form-text text-muted">Jamas se compartirá su celular de manera publica</small>
       </div>
-      <button type="submit" name="enviar" class="btn btn-success btn-block">Guardar Cambios</button>
+      <a href="viewrecords.php" class="btn btn-default btn">Regresar a la lista</a>
+      <button type="submit" name="enviar" class="btn btn-success btn">Guardar Cambios</button>
+
   </form>
 
   <?php } ?>
