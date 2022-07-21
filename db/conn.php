@@ -1,10 +1,17 @@
 <?php
     //$host='127.0.0.1';
-    $host = 'localhost';
-    $db = 'asistentes';
-    $user = 'root';
-    $pass = '';
+    //conexion en xamp
+    //$host = 'localhost';
+    //$db = 'asistentes';
+    //$user = 'root';
+    //$pass = '';
     //$charset = 'utf8mb4';
+
+    //conexion a base de datos remota
+    $host = 'sql10.freesqldatabase.com';
+    $db = 'sql10507774';
+    $user = 'sql10507774';
+    $pass = 'gbPDrb8E99';
 
     $dsn = "mysql:host=$host;dbname=$db";
 
