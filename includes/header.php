@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/site.css" />
 
-    <title>Attendance - <?php echo $title ?></title>
+    <title>Asistentes - <?php echo $title ?></title>
   </head>
   <body>
   <div class= "container">
