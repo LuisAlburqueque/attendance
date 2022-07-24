@@ -8,10 +8,10 @@
         }
 
         //funcion para insertar datos en la base de datos
-        public function insertAsistentes($nombres, $apellidos, $fdn, $email, $numero, $especialidad){
+        public function insertAsistentes($nombres, $apellidos, $fdn, $email, $numero, $especialidad,$avatar_path){
             try {
                 //definiendo el comando sql que se ejecutará
-                $sql = "INSERT INTO asistentes(nombres, apellidos, fechnac, email, numero, espec_id) VALUES (:nombres, :apellidos, :fdn, :email, :numero, :especialidad)";
+                $sql = "INSERT INTO asistentes(nombres, apellidos, fechnac, email, numero, espec_id, avatar_path) VALUES (:nombres, :apellidos, :fdn, :email, :numero, :especialidad, :avatar_path)";
                 //prepara el comando sql para la ejecucion
                 $stmt =  $this->db->prepare($sql);
 
@@ -25,6 +25,7 @@
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':numero',$numero);
                 $stmt->bindparam(':especialidad',$especialidad);
+                $stmt->bindparam(':avatar_path',$avatar_path);
                 //ejecutar el comando
                 $stmt->execute();
                 return true;

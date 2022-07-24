@@ -15,7 +15,7 @@
   -->
   <h1 class="text-center">Registro para conferencia TI</h1>
   
-  <form method="post" action="success.php">
+  <form method="post" action="success.php" enctype="multipart/form-data">
       <div class="form-group">
         <label for="nombres">Nombres</label>
         <input required type="text" class="form-control" id="nombres" name="nombres">
@@ -45,6 +45,13 @@
         <label for="celular">Celular</label>
         <input type="text" class="form-control" id="numero" name="numero" aria-describedby="ceHelp">
         <small id="celHelp" class="form-text text-muted">Jamas se compartirá su celular de manera publica</small>
+      </div>
+      <br>
+      <div class="custom-file">
+        <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+        <label class="custom-file-label" for="avatar">Escoge una Foto</label>
+        <small id="avatar" class="form-text text-danger">Es Opcional</small>
+
       </div>
       <button type="submit" name="enviar" class="btn btn-primary btn-block">Enviar</button>
   </form>

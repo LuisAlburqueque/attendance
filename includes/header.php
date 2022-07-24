@@ -18,13 +18,12 @@ include_once 'includes/sesion.php' ?>
     <title>Asistentes - <?php echo $title ?></title>
   </head>
   <body>
-  <div class= "container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="index.php">Conferencia TI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
@@ -45,4 +44,6 @@ include_once 'includes/sesion.php' ?>
           <?php } ?>  
         </div>
       </nav>
+  <div class= "container">
+      
       <br/>

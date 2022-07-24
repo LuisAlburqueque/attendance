@@ -12,8 +12,16 @@
     $email = $_POST['email'];
     $numero = $_POST['numero'];
     $especialidad = $_POST['especialidad'];
+
+
+    $orig_file = $_FILES["avatar"]["tmp_name"];
+    $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'uploads/';
+    $destino = "$target_dir$numero.$ext";
+    move_uploaded_file($orig_file,$destino);
+
     //llama a la funcion insert y revisa si funciona o no
-    $isSuccess = $crud->insertAsistentes($nombres,$apellidos,$fdn,$email,$numero,$especialidad);
+    $isSuccess = $crud->insertAsistentes($nombres,$apellidos,$fdn,$email,$numero,$especialidad,$destino);
     $especialidadNombre = $crud->getEspecialidadesPorId($especialidad);
 
     if($isSuccess){
@@ -24,7 +32,6 @@
     }
   }
 ?> 
-
         <!-- esto imprime los valores que pasamos a la pagina accion usando ewl metodo ="get" -->
         <!--
         <div class="card" style="width: 18rem;">
@@ -42,6 +49,7 @@
                 </p>
             </div>
         </div> -->
+        <img src="<?php echo $destino; ?>" class="rounded-circle" style="width: 20%; height:20%">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">

@@ -12,6 +12,9 @@
         $id = $_GET['id'];
         $result = $crud->getAsistentesDetalles($id);
 ?> 
+
+        <img src="<?php echo empty($result['avatar_path']) ? "uploads/vacio.jpg" : $result['avatar_path'] ?>" class="rounded-circle" style="width: 20%; height:20%">
+
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $result['nombres'] . ' ' . $result['apellidos'];?></h5>

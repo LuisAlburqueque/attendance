@@ -18,7 +18,7 @@
 
   <h1 class="text-center">Editar Registro</h1>
   
-  <form method="post" action="editpost.php">
+  <form method="post" action="editpost.php" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $asistentes['asistente_id']?>" />
       <div class="form-group">
         <label for="nombres">Nombres</label>
