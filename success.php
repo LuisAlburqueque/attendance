@@ -1,7 +1,8 @@
 <?php 
   $title = 'Exito';
-  require_once 'includes/header.php'; 
-  require_once 'db/conn.php'; 
+  require_once 'includes/header.php';
+  require_once 'db/conn.php';
+  require_once 'sendemail.php';
 
   if(isset($_POST['enviar'])){
     //extracion de valores del array $_POST
@@ -13,8 +14,10 @@
     $especialidad = $_POST['especialidad'];
     //llama a la funcion insert y revisa si funciona o no
     $isSuccess = $crud->insertAsistentes($nombres,$apellidos,$fdn,$email,$numero,$especialidad);
+    $especialidadNombre = $crud->getEspecialidadesPorId($especialidad);
 
     if($isSuccess){
+        //SendEmail::SendMail($email,'Te inscribiste en mi pagina :)', ':D' );
         include 'includes/successmsg.php';
     }else{
         include 'includes/errormsg.php';
@@ -41,8 +44,12 @@
         </div> -->
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $_POST['nombres'] . ' ' . $_POST['apellidos'];?></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST['especialidad'];?></h6>
+                <h5 class="card-title">
+                    <?php echo $_POST['nombres'] . ' ' . $_POST['apellidos'];?>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <?php echo $especialidadNombre['nombre'];?>
+                </h6>
                 <p class="card-text">
                 Fecha de Nacimiento: <?php echo $_POST['fdn'];?>
                 </p>

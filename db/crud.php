@@ -108,6 +108,21 @@
             }
             
         }
+
+        public function getEspecialidadesPorId($id){
+            try{
+                $sql = "SELECT * FROM `especialidad` where espec_id= :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id', $id);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+            }catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
+
+        }
         
     }
 ?>
